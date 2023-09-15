@@ -3,7 +3,7 @@ Ansible playbook that takes AWS [RDS](https://aws.amazon.com/rds/), [EFS](https:
 
 This is a sample Ansible playbook solution that executes below flow :
 
-![Alt text](https://raw.githubusercontent.com/sanket-bengali/aws-backup-ansible/master/images/Ansible%20Playbook%20flow.png?raw=True "Ansible playbook flow")
+![Alt text](https://raw.githubusercontent.com/dragonmstr/aws-backup-ansible/master/images/Ansible%20Playbook%20flow.png?raw=True "Ansible playbook flow")
 ## Assumptions
 1. Dependencies :
 For this solution, it is assumed that the [Bastian host](https://en.wikipedia.org/wiki/Bastion_host) has necessary dependencies installed like [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html), [Boto](https://aws.amazon.com/sdk-for-python/) (to execute AWS operations), etc.
@@ -25,7 +25,7 @@ As pre-script, httpd service is stopped and as post-script, httpd service is sta
 6. This sample solution doesn't include automated/scheduled backup option. It can be enhanced as needed.
 
 ## Playbooks structure
-![Alt text](https://raw.githubusercontent.com/sanket-bengali/aws-backup-ansible/master/images/Ansible%20playbook%20tree%20structure.png?raw=True "Ansible playboks tree structure")
+![Alt text](https://raw.githubusercontent.com/dragonmstr/aws-backup-ansible/master/images/Ansible%20playbook%20tree%20structure.png?raw=True "Ansible playboks tree structure")
 
 ## Inventories
 The inventories section contains the hosts information [Bastian host + <my_app> EC2 instances].
@@ -43,7 +43,7 @@ Each role has its own vars (can be changed as needed) and tasks directories ment
 
 #### NOTE : Running these playbooks uses AWS services and creates Backup resources, which could add cost as per AWS pricing.
 
-1. Clone this repository : ```git clone https://github.com/sanket-bengali/aws-backup-ansible.git```
+1. Clone this repository : ```git clone https://github.com/dragonmstr/aws-backup-ansible.git```
 
 2. Go to the playbook directory : ```cd /path/to/repository/ansible/aws/```
 
@@ -80,10 +80,6 @@ Each role has its own vars (can be changed as needed) and tasks directories ment
    -> In "take_neo4j_db_backup/vars/main.yaml" : "/home/ubuntu/<neo4j_backup_dir>"
 
 5. Run the playbook : ```ansible-playbook my_app_backup.yaml -i inventories/poc/hosts```
-
-## More information
-
-[AWS services backup using Ansible playbooks](https://medium.com/@sanketbengali.23/aws-services-backup-using-ansible-playbooks-df8516a0e2b5)
 
 ## License
 
